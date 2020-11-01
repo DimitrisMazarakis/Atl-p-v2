@@ -1,0 +1,196 @@
+body {
+	margin: 0;
+	padding: 0;
+	background: white;
+}
+
+ ::placeholder {
+	color: white;
+	font-size: 18px;
+}
+
+.search_bar {
+	background: #013a81;
+	max-width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	height: 40px;
+	width: 500px;
+	border-radius: 40px;
+	text-align: center;
+	position: auto;
+}
+
+.search_bar:hover>.search-txt {
+	width: 60%;
+	padding: 0 6px;
+}
+
+.search_bar:hover>.search-btn {
+	background: rgb(156, 106, 104);
+	color: rgb(156, 106, 104);
+}
+
+.search-btn {
+	color: white;
+	float: right;
+	width: 10%;
+	height: 100%;
+	border-radius: 50%;
+	background: #ffffff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.search-btn>i {
+	font-size: 28px;
+	color: #013a81;
+}
+
+.search-txt {
+	border: none;
+	background: none;
+	outline: none;
+	float: left;
+	padding: 10;
+	color: white;
+	font-size: 16px;
+	transition: 0.4s;
+	line-height: 40px;
+	font-weight: bold;
+	font-style: normal;
+	margin-left: 10px;
+}
+
+.main {
+	background-color: lightgrey;
+	width: 400px;
+	height: 700px;
+	align-content: center;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 150px;
+	border-radius: 40px;
+}
+
+.card {
+	background: #013a81;
+	box-shadow: 0 20px 20px 0 #013a81;
+	max-width: 300px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0%;
+	text-align: center;
+	font-family: arial;
+	border-radius: 40px;
+	height: 450px;
+}
+
+/* buttons*/
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.buttons {
+  text-align: center;
+  margin-top: 3%;
+}
+
+.btn {
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid #013a81;
+  background: white;
+  padding: 15px 20px;
+  font-size: 18px;
+  font-family: "montserrat";
+  cursor: pointer;
+  margin: 10px;
+  transition: 0.5s;
+  position: relative;
+  font-weight: bold;
+  text-align: center;
+  align-content: center;
+}
+
+.btn1 {
+  background: green;
+}
+
+.btn2 {
+  background: red;
+}
+
+.btn1:hover,
+.btn2:hover {
+  color: #fff;
+}
+
+
+/* Sidebar */
+
+body {
+	overflow-x: hidden;
+}
+
+.sidebar {
+	top: 0%;
+	margin: 0px;
+	padding: 0;
+	width: 150px;
+	background-color: #013a81;
+	position: fixed;
+	height: 100vh;
+	overflow: auto;
+}
+
+
+/* Sidebar links */
+
+.sidebar a {
+	display: block;
+	color: white;
+	padding: 16px;
+	text-decoration: none;
+}
+
+
+/* Links on mouse-over */
+
+.sidebar a:hover:not(.active) {
+	background-color: rgb(28, 70, 148);
+	color: white;
+	text-decoration:underline;
+}
+
+
+/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+
+div.content {
+	margin-left: 200px;
+	padding: 1px 16px;
+	height: 1000px;
+}
+
+
+/* On screens that are less than 700px wide, make the sidebar into a topbar */
+
+@media screen and (max-width: 700px) {
+	.sidebar {
+		width: 100%;
+		height: auto;
+		position: absolute;
+	}
+	.sidebar a {
+		float: left;
+		margin-left: 10px;
+	}
+	.div.content {
+		margin-left: auto;
+		height: 80px;
+  }
+}  

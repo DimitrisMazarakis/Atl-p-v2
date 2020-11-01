@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="Add User" content="">
+  <meta name="plapatas" content="">
+  <link rel="shortcut icon" type="Images/png" href="Images/logo.png">
+  <title>Προσθήκη Χρήστη</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/Add_User.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <div class="d-flex" id="wrapper">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <a href="secondpage.html" >Διαχείρηση Χρηστών</a>
+      <a href="#Ενημέρωση Αναλύσεων">Ενημέρωση Αναλύσεων</a>
+    </div>
+    <!-- /#sidebar-wrapper -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 col-xl-9 mx-auto">
+          <div class="card card-signin flex-row my-5">
+            <div class="card-body">
+              <h5 class="card-title text-center">Register New User</h5>
+              <form class="form-signin">
+                <div class="form-label-group">
+                  <input type="text" id="inputUserame" class="form-control" placeholder="Username" required autofocus>
+                  <label for="inputUserame">Username</label>
+                </div>             
+                  <div class="form-label-group">
+                  <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                  <label for="inputPassword">Password</label>
+                </div>
+                <div class="form-label-group">
+                  <input type="password" id="inputConfirmPassword" class="form-control" placeholder="Password" required>
+                  <label for="inputConfirmPassword">Confirm password</label>
+                </div>
+                <div class="form-list">
+                  <select name="Department" id="Department">
+                    <option value="Τμήμα" selected hidden> Τμήμα </option>
+                    <option value="Διοίκηση"> Διοίκηση </option>
+                    <option value="Κλάδος Αυτοκινήτων"> Κλάδος Αυτοκινήτων </option>
+                    <option value="Κλάδος Πωλήσεων"> Κλάδος Πωλήσεων </option>
+                    <option value="Λογιστήριο"> Λογιστήριο </option>
+                    <option value="IT"> IT </option>
+                  </select>
+                </div>
+                <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Register</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+  </div>
+
+</body>
+
+</html>

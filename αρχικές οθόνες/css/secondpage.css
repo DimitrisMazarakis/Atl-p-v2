@@ -1,0 +1,114 @@
+body {
+    overflow-x: hidden;
+  }
+h1{
+font-size:5em;
+margin:0;
+padding:0;
+text-align:center;
+font-family: 'arial';
+position: absolute;
+top:50%;
+left:50%;
+transform:translateX(-50%) translateY(-50%);
+}
+.button1{
+  color: black;
+  font-size: 1.8rem;
+}
+.button2{
+  color: black;
+  margin-left: 20px;
+  font-size: 1.8rem;
+}
+.button1:active{
+  background-color:green;
+  transform: translate(-10px,10px);
+  box-shadow: 1 10px #f523c0;
+  transition-duration: 0.2s;
+}
+.button2:active{
+  background-color: rgb(255, 10, 10);
+  transform: translate(-10px,10px);
+  box-shadow: 1 10px #f523c0;
+  transition-duration: 0.2s;
+}
+  
+  .sidebar {
+    margin: 0;
+    padding: 0;
+    width: 150px;
+    background-color:#013a81;
+    position: relative;
+    height: 100vh;
+    overflow: auto;
+  }
+  
+  /* Sidebar links */
+  .sidebar a {
+    display: block;
+    color: white;
+    padding: 16px;
+    text-decoration: none;
+  }
+  
+  
+  /* Links on mouse-over */
+  .sidebar a:hover:not(.active) {
+    background-color: rgb(28, 70, 148);
+    color: white;
+  }
+  
+  /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+  div.content {
+    margin-left: 200px;
+    padding: 1px 16px;
+    height: 1000px;
+  }
+  
+  /* On screens that are less than 700px wide, make the sidebar into a topbar */
+  @media screen and (max-width: 700px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: absolute;
+    }
+    .sidebar a {
+      float: left;
+      margin-left: 10px;
+    }
+    .div.content {
+      margin-left: auto;
+      height: 80px;
+    }  
+    .btn{
+      text-align: center;
+      width: 70%;
+      height: calc(20vh);
+      background-color: darkblue;
+      color:darkblue;
+      font: size 30px;
+      cursor:pointer;
+      transition: all 0.4s ease-in-out;
+      box-shadow: -3px 3px 0 white;
+      margin:10px;
+      transform: rotate3d(1,1,0,15deg);
+      outline:none;
+      display:block;
+      position: relative;
+      top:0%;
+      left:0%;
+      right:150px;
+      align-content:center;
+  }
+  .btn:hover{
+      background-color: red;
+      transform: rotate(0deg);
+      box-shadow: -7px 7px 0 darkblue;
+  }
+  .btn:active{
+      background-color: rgb(255, 10, 10);
+      transform: translate(-10px,10px);
+      box-shadow: 1 10px #f523c0;
+      transition-duration: 0.2s;
+  }

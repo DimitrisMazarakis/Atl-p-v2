@@ -1,0 +1,94 @@
+
+.border1 { 
+    border: 1px solid #000099; 
+    width: 300px;
+    text-align: center;
+    color: blue;
+    margin-left: auto;
+    margin-right: auto;
+}
+.back{
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  font: bold 14px Arial;
+  text-decoration: black;
+  background-color: #EEEEEE;
+  color: #333333;
+  padding: 5px 15px 5px 15px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+}
+#submit{
+  margin-bottom: 15px;
+}
+.titlos{
+  margin-top: 60px;
+  color: blue;
+  margin-left: auto;
+  margin-right: auto;
+  width:400px
+}
+
+body {
+    overflow-x: hidden;
+}
+  .sidebar {
+    top:0%;
+    margin: 0px;
+    padding:0;
+    width: 150px;
+    background-color:#013a81;
+    position: fixed;
+    height: 100vh;
+    overflow: auto;
+  }
+  
+  /* Sidebar links */
+  .sidebar a {
+    display: block;
+    color: white;
+    padding: 16px;
+    text-decoration: none;
+  }
+  
+  
+  /* Links on mouse-over */
+  .sidebar a:hover:not(.active) {
+    background-color: rgb(28, 70, 148);
+    color: white;
+  }
+  
+  /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+  div.content {
+    margin-left: 200px;
+    padding: 1px 16px;
+    height: 1000px;
+  }
+  
+  /* On screens that are less than 700px wide, make the sidebar into a topbar */
+  @media screen and (max-width: 700px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: absolute;
+    }
+    .sidebar a {
+      float: left;
+      margin-left: 10px;
+    }
+    .div.content {
+      margin-left: auto;
+      height: 80px;
+    }  
+    .back{
+      position: absolute;
+      top: 112px;
+      right: 0px;
+  }
+    .titlos{
+      margin-top: 130px;
+    }
+  }

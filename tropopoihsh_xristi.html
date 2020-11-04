@@ -3,43 +3,67 @@
 
 <head>
     <title>Τροποποίηση στοιχείων χρήστη</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css/tropopoihsh_xristi.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="Add User" content="">
+    <meta name="plapatas" content="">
     <link rel="shortcut icon" type="Images/png" href="Images/logo.png">
+  
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/tropopoihsh_xristi.css" rel="stylesheet">
+    
 </head>
 
 <body>
-    <div>
-        <div class="titlos">
-            <center>
-                <h1>Τροποποίηση στοιχείων χρήστη</h1></center>
+    <div class="d-flex" id="wrapper">
+     <div class="sidebar">
+        <a> Διαχείρηση Χρηστών</a>
+        <a href="search.html"> Αναζήτηση Χρηστών</a>
+        <a href="Add_User.html"> Προσθήκη Χρηστών</a>
+        <div class="back">
+          <a href="login.html" >Έξοδος</a>
         </div>
-        <br>
-    </div>
-    <div class="sidebar">
 
-        <a href="secondpage.html"> Διαχείρηση Χρηστών</a>
-        <a href="#Ενημέρωση Αναλύσεων"> Ενημέρωση Αναλύσεων</a>
-    </div>
 
-    <div class="border1">
-        <br> Username:
-        <br>
-        <input type="text" name="Username" id="Username" placeholder="Username" disabled>
-        <br> Old Password:
-        <br>
-        <input type="password" name="old Password" id="old Password" placeholder="give the old password">
-        <br> New Password:
-        <br>
-        <input type="password" name="new Password" id="new Password" placeholder="give the new password">
-        <br>
-        <br>
-        <input type="button" id="submit" value="submit" name="sbutton1">
+     </div>
+        <div class="container">
+            <div class="row">
+              <div class="col-lg-10 col-xl-9 mx-auto">
+                <div class="card card-signin flex-row my-5">
+                  <div class="card-body">
+                    <h5 class="card-title text-center">Τροποποίηση στοιχείων χρήστη</h5>
+                    <form class="form-signin">
+                      <div class="form-label-group">
+                        <input type="text" id="inputUserame" class="form-control" placeholder="Username" required autofocus>
+                        <label for="inputUserame">Username</label>
+                      </div>             
+                      <div class="form-label-group">
+                        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                        <label for="inputPassword">Old Password</label>
+                      </div>
+                      <div class="form-label-group">
+                        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                        <label for="inputPassword">New Password</label>
+                      </div>
+                      <div class="form-label-group">
+                        <input type="password" id="inputConfirmPassword" class="form-control" placeholder="Password" required>
+                        <label for="inputConfirmPassword">Confirm password</label>
+                      </div>
+                      <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Register</button>
+                    </form>
+                   </div>
+                </div>
+            </div>
+          
+        </div>
+        </div>
+      <!-- /#page-content-wrapper -->
     </div>
-        <span class="back"> <a href="search.html"> Back</a></span>
-    </div>
-
+    
+        
 </body>
 </html

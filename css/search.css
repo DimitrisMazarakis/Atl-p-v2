@@ -137,6 +137,7 @@ body {
 	overflow-x: hidden;
 }
 
+
 .sidebar {
 	top: 0%;
 	margin: 0px;
@@ -193,4 +194,14 @@ div.content {
 		margin-left: auto;
 		height: 80px;
   }
+  .back{
+	right: 0;
+	position: absolute;
+  }
+
 }  
+
+.back{
+    position: absolute; 
+    bottom: 0;
+  }

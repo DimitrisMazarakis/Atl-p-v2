@@ -57,7 +57,7 @@ public class Contract{
     }
 
 
-    public String getPackag() {
+    public String getPackage() {
         return packag;
     }
 

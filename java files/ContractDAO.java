@@ -23,7 +23,7 @@ public class ContractDAO{
 			while(rs.next()) {
 
 				contracts.add( new Contract(rs.getInt("id_contract"),rs.getInt("previous_contract"), rs.getInt("afm"),rs.getInt("id_agency"),
-							rs.getString ("vehicle_type"),rs.getString ("plate"),rs.getString ("packag"),rs.getString ("transport"),rs.getDate("starting_date"),
+							rs.getString ("vehicle_type"),rs.getString ("plate"),rs.getString ("package"),rs.getString ("transport"),rs.getDate("starting_date"),
 							rs.getInt("duration"),rs.getFloat("amount")) );
 
 			}

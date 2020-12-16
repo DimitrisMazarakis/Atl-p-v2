@@ -11,7 +11,10 @@ import java.util.Date;
 
 
 public class Analysis {
-  /*  public static void main(String[] args) throws Exception{
+
+    /*min dwseis simasia
+    public static void main(String[] args) throws Exception{//min dwseis sima
+        
         AgencyDAO ag = new AgencyDAO();
         float t[][]= commissionComparison();
         for(int i=0; i<t.length; i++){
@@ -20,10 +23,89 @@ public class Analysis {
         
         String s = ag.findName(t[0][0]);
         System.out.println(s);
-    }*/
+        */
+        //List<Agency> agencies =  new ArrayList<Agency>();
+        /*
+        float[][] con_by_agency = new float[30][7];
+        con_by_agency=performanceAnalysis();
+        
+        for(int i=0;i<30;i++){
+            for(int j=0;j<7;j++){
+                System.out.println(con_by_agency[i][j]);
+            }
+        }
+        
+        LocalDate myObj1 = LocalDate.now().minusDays(365); //wra (persi)
+    Date date1 = Date.from(myObj1.atStartOfDay(ZoneId.systemDefault()).toInstant());
+    LocalDate myObj_prev1 = LocalDate.now().minusDays(730); //wra (propersi)
+    Date date_prev1 = Date.from(myObj_prev1.atStartOfDay(ZoneId.systemDefault()).toInstant());
+    LocalDate myObj_now1 = LocalDate.now(); //wra (fetos)
+    Date date_now1 = Date.from(myObj_now1.atStartOfDay(ZoneId.systemDefault()).toInstant());
+    LocalDate myObj_prpr1 = LocalDate.now().minusDays(1095); //wra (propropersu)
+    Date date_prpr1 = Date.from(myObj_now1.atStartOfDay(ZoneId.systemDefault()).toInstant());
+    float[][] con_by_agency4 = new float[30][4];      
+    float[][] con_by_agency4prev = new float[30][4];
+    float[][] con_by_agency4prpr = new float[30][4];
+
+    Analysis an4 = new Analysis();
+    AgencyDAO ad4= new AgencyDAO();
+
+    con_by_agency4 = an4.compareWithLastYear(date1,date_now1);
+    con_by_agency4prev = an4.compareWithLastYear(date_prev1,date1);
+    con_by_agency4prpr = an4.compareWithLastYear(date_prpr1,date_prev1);
+
+
+    //float[][] w_agency = new float[5][7];
+    float[][] min_values4 =new float[5][5];
+    for (int row = 0; row < min_values4.length; row++){
+      for (int col = 0; col < min_values4[row].length; col++){
+        min_values4[row][col] = 100000000.0f; //Whatever value you want to set them to
+      }
+    }
+    /*for (float[] row: min_values)
+        Arrays.fill(row, 0.0);
+    /*for(int i = 0; i<5;i++){
+      min_values[i]=0.0;
+    }
+    float k1;
+    for(int i=0;i<30;i++){
+        for(int j=0;j<4;j++){
+            //System.out.println(con_by_agency4[i][j]+"con");
+            System.out.println(con_by_agency4prpr[i][2]+"conprpr");
+            //System.out.println(con_by_agency4prev[i][j]+"conprev");
+        }
+    }
+    for(int i=0; i<30; i++){
+        if (con_by_agency4prpr[i][2]!=0.0f){
+      k1=(con_by_agency4[i][2] - con_by_agency4prpr[i][2])/con_by_agency4prpr[i][2];
+      System.out.println(k1);
+
+      for(int j=0;j<5;j++){
+        if(k1<min_values4[j][1]){
+            System.out.println("poutsaaaaaaaaaaaaaaaaaaa");
+
+          min_values4[j][0]=con_by_agency4[i][0];
+          min_values4[j][1]=k1;
+          min_values4[j][2]=con_by_agency4prpr[i][2];
+          min_values4[j][3]=con_by_agency4prev[i][2];
+          min_values4[j][4]=con_by_agency4[i][2];
+          break;
+        } 
+      }
+    }
+    } 
+    
+    for(int i=0;i<5;i++){
+        for(int j=0;j<5;j++){
+            System.out.println(min_values4[i][j]);
+        }
+    }
+       
+    }
+*/
 
 //1η Ανάλυση
-    // 1η Ανάλυση xoris kapoio koumpi
+    // 1η Ανάλυση xoris kapoio checkbox
     public static float[][] commissionComparison() throws Exception{
         List<Agency> agencies =  new ArrayList<Agency>();
         List<Contract> contracts =  new ArrayList<Contract>();

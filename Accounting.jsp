@@ -37,15 +37,15 @@
                   </select>
                 </div>
                 <label class="container"> 
-                    <input type="checkbox"> Ανά έτος
+                    <input type="checkbox" name = "etos" > Ανά έτος
                     <span class="checkmark"></span>
                 </label>
                 <label class="container"> 
-                    <input type="checkbox"> Σύγκριση με πέρυσι
+                    <input type="checkbox" name = "persi" > Σύγκριση με πέρυσι
                     <span class="checkmark"></span>
                 </label>
                 <label class="container"> 
-                    <input type="checkbox"> Δημιουργία διαγράμματος
+                    <input type="checkbox" name = "diagramma" > Δημιουργία διαγράμματος
                     <span class="checkmark"></span>
                 </label>
                 <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Παραγωγή Ανάλυσης</button>

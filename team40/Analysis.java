@@ -11,7 +11,7 @@ import java.util.Date;
 
 
 public class Analysis {
-    public static void main(String[] args) throws Exception{
+  /*  public static void main(String[] args) throws Exception{
         AgencyDAO ag = new AgencyDAO();
         float t[][]= commissionComparison();
         for(int i=0; i<t.length; i++){
@@ -20,10 +20,10 @@ public class Analysis {
         
         String s = ag.findName(t[0][0]);
         System.out.println(s);
-    }
+    }*/
 
-
-    
+//1η Ανάλυση
+    // 1η Ανάλυση xoris kapoio koumpi
     public static float[][] commissionComparison() throws Exception{
         List<Agency> agencies =  new ArrayList<Agency>();
         List<Contract> contracts =  new ArrayList<Contract>();
@@ -45,13 +45,13 @@ public class Analysis {
                     con_by_agency[i][2]+=cond.getAmount();//upologizei tin paragwgi kathe pratoreiou
                 }
             }
-            con_by_agency[i][3]=con_by_agency[i][2]/(con_by_agency[i][1]*con_by_agency[i][2]);//upologizei to ratio
+            con_by_agency[i][3]=(con_by_agency[i][1]/con_by_agency[i][2])*10000;//upologizei to ratio
             i++;
         }
         return con_by_agency;
     }
-
-    public static Float[][] commissionComparison_byYear() throws Exception{
+// //1η Ανάλυση με κουπί ανα ετος
+    public static float[][] commissionComparison_byYear() throws Exception{
         LocalDate myObj = LocalDate.now().minusDays(365); //wra (persi)
         Date date = Date.from(myObj.atStartOfDay(ZoneId.systemDefault()).toInstant());
 
@@ -63,7 +63,7 @@ public class Analysis {
         agencies= adao.getAgencies();
         contracts=condao.getContracts();
 
-        Float[][] con_by_agency = new Float[agencies.size()][4];
+        float[][] con_by_agency = new float[agencies.size()][4];
         int i=0;
         for(Agency ag: agencies){
             con_by_agency[i][0]=(float)ag.getId_agency();
@@ -73,13 +73,13 @@ public class Analysis {
                     con_by_agency[i][2]+=cond.getAmount();//upologizei tin paragwgi kathe pratoreiou
                 }
             }
-            con_by_agency[i][3]=con_by_agency[i][2]/(con_by_agency[i][1]*con_by_agency[i][2]);//upologizei to ratio
+            con_by_agency[i][3]=(con_by_agency[i][1]/con_by_agency[i][2])*10000;//upologizei to ratio
             i++;
         }
         return con_by_agency;
     }
-
-    public static Float[][] compareWithLastYear(Date date, Date date_last) throws Exception{
+//1η και 2η ανάλυση ανα ετος
+    public static float[][] compareWithLastYear(Date date, Date date_last) throws Exception{
         
         List<Agency> agencies =  new ArrayList<Agency>();
         List<Contract> contracts =  new ArrayList<Contract>();
@@ -90,7 +90,7 @@ public class Analysis {
         contracts=condao.getContracts();
 
 
-        Float[][] con_by_agency = new Float[agencies.size()][4];
+        float[][] con_by_agency = new float[agencies.size()][4];
         int i=0;
         for(Agency ag: agencies){
             con_by_agency[i][0]=(float)ag.getId_agency();
@@ -100,12 +100,12 @@ public class Analysis {
                     con_by_agency[i][2]+=cond.getAmount();//upologizei tin paragwgi kathe pratoreiou
                 }
             }
-            con_by_agency[i][3]=con_by_agency[i][2]/(con_by_agency[i][1]*con_by_agency[i][2]);//upologizei to ratio
+            con_by_agency[i][3]=(con_by_agency[i][1]/con_by_agency[i][2])*10000;//upologizei to ratio
             i++;
         }
         return con_by_agency;
     }
-
+// μην δωσεις σημασια σε αυτη τη μεθοδο
     public static void comparisonWithLast() throws Exception{//tha mpei sthn jsp ths accountingController
 
         LocalDate myObj = LocalDate.now().minusDays(365); //wra (persi)
@@ -123,14 +123,14 @@ public class Analysis {
         agencies= adao.getAgencies();
         contracts=condao.getContracts();
 
-        Float[][] con_by_agency = new Float[agencies.size()][4];
-        Float[][] con_by_agency_prev = new Float[agencies.size()][4];
+        float[][] con_by_agency = new float[agencies.size()][4];
+        float[][] con_by_agency_prev = new float[agencies.size()][4];
 
         con_by_agency=compareWithLastYear(date,date_now);
         con_by_agency_prev=compareWithLastYear(date_prev,date);
     }
-
-    public static Float[][] performanceAnalysis() throws Exception{    //to date tha to pairnei apo tin jsp
+//2η Ανάλυση ανα μηνα και xoris kapoio koumpi
+    public static float[][] performanceAnalysis() throws Exception{    //to date tha to pairnei apo tin jsp
         LocalDate myObj = LocalDate.now().minusMonths(6); //wra (persi)
         Date date = Date.from(myObj.atStartOfDay(ZoneId.systemDefault()).toInstant());
         List<Agency> agencies =  new ArrayList<Agency>();
@@ -141,7 +141,7 @@ public class Analysis {
         agencies= adao.getAgencies();
         contracts=condao.getContracts();
 
-        Float[][] con_by_agency = new Float[agencies.size()][7];
+        float[][] con_by_agency = new float[agencies.size()][7];
         int i=0;
         int month=myObj.getMonthValue();
         for(Agency ag: agencies){

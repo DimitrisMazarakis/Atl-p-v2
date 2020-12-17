@@ -33,7 +33,7 @@
                   <select name="Department" id="Department">
                     <option value="Τμήμα" selected hidden> Αναλύσεις </option>
                     <option value="Α1"> Σύγκριση προμήθειας πρακτορείων με την συνολική παραγωγή τους </option>
-                    <option value="Α2"> Ανάλυση πρακτορείων με μειωμένη απόδοση </option>
+                    <option value="Α2"> Ανάλυση απόδοσης πρακτορείων  </option>
                   </select>
                 </div>
                 <label class="container"> 

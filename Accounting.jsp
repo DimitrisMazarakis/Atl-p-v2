@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,12 +30,12 @@
           <div class="card card-signin flex-row my-5">
             <div class="card-body">
               <h5 class="card-title text-center">Αναλύσεις Λογιστηρίου</h5>
-              <form class="form-signin">
+              <form action="AccountingController.jsp" method="POST" class="form-signin">
                 <div class="form-list">
                   <select name="Department" id="Department">
                     <option value="Τμήμα" selected hidden> Αναλύσεις </option>
-                    <option value="Α1"> Σύγκριση προμήθειας πρακτορείων με την συνολική παραγωγή τους </option>
-                    <option value="Α2"> Ανάλυση απόδοσης πρακτορείων  </option>
+                    <option value="ena"> Σύγκριση προμήθειας πρακτορείων με την συνολική παραγωγή τους </option>
+                    <option value="duo"> Ανάλυση πρακτορείων με αυξημένη απόδοση </option>
                   </select>
                 </div>
                 <label class="container"> 

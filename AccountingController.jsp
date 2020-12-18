@@ -17,7 +17,7 @@
       <div class="container theme-showcase" role="main">
          <!-- Main jumbotron for a primary marketing message or call to action -->
          <div class="jumbotron">
-            <h1>Analysis Results</h1>
+            <h1 style="text-align:center">Analysis Results</h1>
          </div>
       </div>
       <%
@@ -28,14 +28,14 @@
          Boolean den_mphke=true;
          Analysis analysis1 = new Analysis();
          Analysis analysis2 = new Analysis();
-         float[][] pinakas1= new float[30][4];
+		 float[][] pinakas1= new float[30][4];
          if (dep == null) { 
-            response.sendRedirect("Accounting.jsp");
+			response.sendRedirect("Accounting.jsp");
             return;
          }
-         if( dep.equals("A1")){
+         if( dep.equals("ena")){
          	%>
-      		<h1 text-align="center">Σύγκριση προμήθειας πρακτορείων με την συνολική παραγωγή τους</h1>
+      		<h1 style="text-align:center">Σύγκριση προμήθειας πρακτορείων με την συνολική παραγωγή τους</h1>
       		<%
          	if(diagramma==null){
          		if(etos==null && persi==null){
@@ -72,7 +72,7 @@
          		}
             	if(etos!=null && persi==null){
          			%>
-					<h2>Ανα έτος</h2>
+					<h2 style="text-align:center">Ανα έτος</h2>
 					<table class="table table-bordered" >
 						<tr class="shrink">
 							<th>Agency Name</th>
@@ -107,7 +107,7 @@
 				if(etos==null && persi!=null){
 				den_mphke=false;
 				%>
-				<h2>Συγκριση με πέρυσι</h2>
+				<h2 style="text-align:center">Συγκριση με πέρυσι</h2>
 				<table class="table table-bordered" >
 					<tr class="shrink">
 						<th>Agency Name</th>
@@ -130,20 +130,20 @@
 				den_mphke=false;
 				if(etos==null && persi==null){
 					%>
-					<div id="top_x" style="width: 800px; height: 600px;"></div>
+					<div  id="top_x" style="width: 800px; height: 600px; margin:0 auto;"></div>
 					<%
 				}
 				if(etos!=null && persi==null){
 					%>
-					<h2>Ανα έτος</h2>
-					<div id="top_x_div" style="width: 800px; height: 600px;"></div>
+					<h2 style="text-align:center">Ανα έτος</h2>
+					<div id="top_x_div" style="width: 800px; height: 600px; margin:0 auto;"></div>
 					<%
 					// prwto checkbox ana etos
 				}
 				if(etos==null && persi!=null){
 					%>
-					<h2>Συγκριση με πέρυσι</h2>
-					<div id="chart_div" style="width: 800px; height: 500px;"></div>
+					<h2 style="text-align:center">Συγκριση με πέρυσι</h2>
+					<div id="chart_div" style="width: 800px; height: 500px; margin:0 auto;"></div>
 					<%
 					//deutero checkbox sugkrish mee persu
          		}
@@ -173,9 +173,9 @@
 			<%
       	}
       	
-        if(dep.equals("A2")){
+        if(dep.equals("duo")){
          	%>
-			<h1>Ανάλυση πρακτορείων με μειωμένη απόδοση</h1>
+			<h1 style="text-align:center">Ανάλυση πρακτορείων με αυξημένη απόδοση</h1>
 			<%
 			if(diagramma==null){
 				if(etos==null && persi==null){%>
@@ -213,7 +213,7 @@
 				}
 				if(etos!=null && persi==null){
 					%>
-					<h2>Ανα έτος</h2>
+					<h2 style="text-align:center">Ανα έτος</h2>
 					<table class="table table-bordered">
 						<tr class="warning">
 							<th>Agency Name</th>
@@ -246,7 +246,7 @@
 				if(etos==null && persi!=null){
 					den_mphke=false;//logika
 					%>
-					<h2>Συγκριση με πέρυσι</h2>
+					<h2 style="text-align:center">Συγκριση με πέρυσι</h2>
 					<table class="table table-bordered">
 						<tr class="warning">
 							<th>Agency Name</th>
@@ -343,21 +343,21 @@
 				den_mphke=false;
 				if(etos==null && persi==null){
 					%>
-					<div id="line_to"></div>
+					<div style="width:800px; margin:0 auto;" id="line_to"></div>
 					<%
 				}
 				if(etos!=null && persi==null){
 					%>
-					<h2>Ανα έτος</h2>
-					<div id="2h_ana_etos"></div>
+					<h2 style="text-align:center">Ανα έτος</h2>
+					<div style="width:800px; margin:0 auto;" id="2h_ana_etos"></div>
 					<%
 					// prwto checkbox ana etos
 				}
 				if(etos==null && persi!=null){
 					%>
-					<h2>Συγκριση με πέρυσι</h2>
-					<div id="line_prlol"></div>
-					<div id="line_to"></div>
+					<h2 style="text-align:center">Συγκριση με πέρυσι</h2>
+					<div style="width:800px; margin:0 auto;" id="line_prlol"></div>
+					<div style="width:800px; margin:0 auto;" id="line_to"></div>
 					<%
 					//deutero checkbox sugkrish mee persu
 				}
@@ -366,6 +366,6 @@
             %>
       <script src="js/jquery.min.js"></script>
       <!-- Bootstrap core JavaScript -->
-      <script	src="js/bootstrap.min.js"></script>
+	  <script	src="js/bootstrap.min.js"></script>
    </body>
 </html>

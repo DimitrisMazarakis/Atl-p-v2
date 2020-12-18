@@ -3,12 +3,12 @@
 <script type="text/javascript">
     google.charts.load('current', {'packages':['line']});
     google.charts.setOnLoadCallback(drawChart);
-
+<%con_by_agency3 = an3.performanceAnalysis(0);%>
   function drawChart() {
     <%
 
 
-    con_by_agency3 = an3.performanceAnalysis(0);
+    
 
     //float[][] w_agency = new float[5][7];
 

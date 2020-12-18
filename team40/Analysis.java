@@ -1,5 +1,5 @@
 package team40;
-
+import java.lang.Object;
 import java.util.ArrayList;
 import java.util.List;
 import java.time.LocalDate;
@@ -7,7 +7,9 @@ import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.Date;
-
+import java.time.temporal.ChronoField;
+import java.time.temporal.ChronoUnit;
+import java.sql.*;
 
 
 public class Analysis {
@@ -132,7 +134,7 @@ public class Analysis {
         }
         return con_by_agency;
     }
-// //1η Ανάλυση με κουπί ανα ετος
+ //1η Ανάλυση με κουbί ανα ετος
     public static float[][] commissionComparison_byYear() throws Exception{
         LocalDate myObj = LocalDate.now().minusDays(365); //wra (persi)
         Date date = Date.from(myObj.atStartOfDay(ZoneId.systemDefault()).toInstant());
@@ -160,7 +162,7 @@ public class Analysis {
         }
         return con_by_agency;
     }
-//1η και 2η ανάλυση ανα ετος
+//1η sugkrisi me persi και 2η ανάλυση ανα ετος kai sugkrisi me persi  MiN ASXOLITHEIS
     public static float[][] compareWithLastYear(Date date, Date date_last) throws Exception{
         
         List<Agency> agencies =  new ArrayList<Agency>();
@@ -211,10 +213,12 @@ public class Analysis {
         con_by_agency=compareWithLastYear(date,date_now);
         con_by_agency_prev=compareWithLastYear(date_prev,date);
     }
-//2η Ανάλυση ανα μηνα και xoris kapoio koumpi
-    public static float[][] performanceAnalysis() throws Exception{    //to date tha to pairnei apo tin jsp
-        LocalDate myObj = LocalDate.now().minusMonths(6); //wra (persi)
-        Date date = Date.from(myObj.atStartOfDay(ZoneId.systemDefault()).toInstant());
+//2η Ανάλυση xoris kapoio koumpi
+    public static float[][] performanceAnalysis(int duration) throws Exception{    //to date tha to pairnei apo tin jsp
+        LocalDate date = LocalDate.now().minusMonths(6); //wra (persi)
+        if(duration==1){
+            date = date.minusMonths(12);
+        }
         List<Agency> agencies =  new ArrayList<Agency>();
         List<Contract> contracts =  new ArrayList<Contract>();
         ContractDAO condao =new ContractDAO();
@@ -224,42 +228,23 @@ public class Analysis {
         contracts=condao.getContracts();
 
         float[][] con_by_agency = new float[agencies.size()][7];
-        int i=0;
-        int month=myObj.getMonthValue();
-        for(Agency ag: agencies){
-            con_by_agency[i][0]=(float)ag.getId_agency();
-            for(Contract cond: contracts){
-                
-                if((cond.getStarting_date()).getMonth()==myObj.getMonthValue() && cond.getId_agency()==con_by_agency[i][0]){
-                    con_by_agency[i][1]+=cond.getAmount();//upologizei tin paragwgi kathe pratoreiou
-                }
-                if((cond.getStarting_date()).getMonth()==myObj.plusMonths(1).getMonthValue() && cond.getId_agency()==con_by_agency[i][0]){
-                    con_by_agency[i][2]+=cond.getAmount();//upologizei tin paragwgi kathe pratoreiou
-                }else{
-                    myObj.minusMonths(1);
-                }
-                if((cond.getStarting_date()).getMonth()==myObj.plusMonths(2).getMonthValue() && cond.getId_agency()==con_by_agency[i][0]){
-                    con_by_agency[i][3]+=cond.getAmount();//upologizei tin paragwgi kathe pratoreiou
-                }else{
-                    myObj.minusMonths(2);
-                }
-                if((cond.getStarting_date()).getMonth()==myObj.plusMonths(3).getMonthValue() && cond.getId_agency()==con_by_agency[i][0]){
-                    con_by_agency[i][4]+=cond.getAmount();//upologizei tin paragwgi kathe pratoreiou
-                }else{
-                    myObj.minusMonths(3);
-                }
-                if((cond.getStarting_date()).getMonth()==myObj.plusMonths(4).getMonthValue() && cond.getId_agency()==con_by_agency[i][0]){
-                    con_by_agency[i][5]+=cond.getAmount();//upologizei tin paragwgi kathe pratoreiou
-                }else{
-                    myObj.minusMonths(4);
-                }
-                if((cond.getStarting_date()).getMonth()==myObj.plusMonths(5).getMonthValue() && cond.getId_agency()==con_by_agency[i][0]){
-                    con_by_agency[i][6]+=cond.getAmount();//upologizei tin paragwgi kathe pratoreiou
-                }else{
-                    myObj.minusMonths(5);
-                }
+        for(int k=0; k<agencies.size(); k++){
+            for(int kj=0; kj<7; kj++){
+                con_by_agency[k][kj]=0;
             }
-            i++;
+        }
+        int j=0;
+        for(Agency ag: agencies){
+            con_by_agency[j][0]=(float)ag.getId_agency();
+            for(Contract cond: contracts){
+                LocalDate datecon = cond.getStarting_date().toLocalDate();
+                for(int i=0; i<6; i++){
+                    if(ChronoUnit.MONTHS.between(datecon/*contract date*/, date.minusMonths(i)) == 0 && cond.getId_agency()==ag.getId_agency()){
+                        con_by_agency[j][i+1]+=cond.getAmount();//upologizei tin paragwgi kathe pratoreiou
+                    }
+                  }
+            }
+            j++;
         }
         return con_by_agency;
     }

@@ -2,6 +2,27 @@
 <%@ page import="java.io.*, java.util.*, java.time.*"%>
 <%@ page import="team40.*" %>
 <%@ page import= "java.time.LocalDate, java.time.Instant, java.time.LocalDateTime, java.time.LocalDateTime, java.util.Date" %>
+<%
+         String dep = request.getParameter("Department");
+         String etos = request.getParameter("etos");
+         String persi = request.getParameter("persi");
+         String diagramma = request.getParameter("diagramma"); 
+         Boolean den_mphke=true;
+         Analysis analysis1 = new Analysis();
+         Analysis analysis2 = new Analysis();
+		 float[][] pinakas1= new float[30][4];
+		 if(etos!=null && persi!=null){
+			request.setAttribute("message","Δεν είναι εφικτό να είναι ταυτόχρονα επιλεγμένα τα κουμπιά 'Ανά έτος' και 'Σύγκριση με πέρυσι' ");
+			%> 
+    		<jsp:forward page="Accounting.jsp" />
+			<%
+		 }
+		 if (!dep.equals("ena") && !dep.equals("duo")) { 
+			request.setAttribute("message","Δεν έχει επιλεχθεί Ανάλυση");
+			%> 
+    		<jsp:forward page="Accounting.jsp" />
+			<%
+		 }%>
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -21,18 +42,6 @@
          </div>
       </div>
       <%
-         String dep = request.getParameter("Department");
-         String etos = request.getParameter("etos");
-         String persi = request.getParameter("persi");
-         String diagramma = request.getParameter("diagramma"); 
-         Boolean den_mphke=true;
-         Analysis analysis1 = new Analysis();
-         Analysis analysis2 = new Analysis();
-		 float[][] pinakas1= new float[30][4];
-         if (dep == null) { 
-			response.sendRedirect("Accounting.jsp");
-            return;
-         }
          if( dep.equals("ena")){
          	%>
       		<h1 style="text-align:center">Σύγκριση προμήθειας πρακτορείων με την συνολική παραγωγή τους</h1>

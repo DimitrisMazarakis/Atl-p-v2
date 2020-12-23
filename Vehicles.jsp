@@ -1,3 +1,12 @@
+<%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page import="team40.*" %>
+<%
+    User user = (User) session.getAttribute("userObj");
+    if(user==null){
+    request.setAttribute("message","You are not authorized to access this resource. Please login.");
+   %>
+    <jsp:forward page="login.jsp" />
+<%}%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,11 +22,9 @@
 
     <!-- Sidebar -->
     <div class="sidebar">
-      <a href="Accounting.jsp" >Αναλύσεις Λογιστηρίου</a>
       <a href="Vehicles.jsp" >Αναλύσεις Αυτοκινήτων</a>
-      <a href="Managment.jsp" >Αναλύσεις Διοίκησης</a>
       <div class="back">
-        <a href="login.jsp" >Έξοδος</a>
+        <a href="logout.jsp" >Έξοδος</a>
       </div>
     </div>
     <!-- /#sidebar-wrapper -->

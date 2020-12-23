@@ -2,15 +2,8 @@
 <html lang="en">
 
 <head>
-<%@ include file="Header.jsp" %>
+    <%@ include file="Header.jsp" %>
   <title>Επιλογή κλάδου</title>
-
-  <!-- Bootstrap core CSS -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/bootstrap.css" rel="stylesheet">
-
-  <!-- Custom styles for this template -->
-  <link href="css/Accounting.css" rel="stylesheet">
 
 </head>
 
@@ -37,7 +30,7 @@
                       <button type="button" class="btn btn-default" onclick="window.location.href='Accounting.jsp'">Κλάδο λογιστηρίου</button>
                     </div>
                     <div class="btn-group" role="group">
-                        <button type="button" class="btn btn-default" onclick="window.location.href='Managment.jsp'">Διοίκηση</button>
+                        <button type="button" class="btn btn-default" onclick="window.location.href='Management.jsp'">Διοίκηση</button>
                       </div>
                   </div>
             </div>

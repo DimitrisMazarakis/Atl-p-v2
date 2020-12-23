@@ -248,8 +248,5 @@ public class Analysis {
         }
         return con_by_agency;
     }
-    
-  
-
     //to date tha to pairnei apo tin jsp
 }

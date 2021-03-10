@@ -3,7 +3,7 @@
  * Copyright 2013-2019 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-simple-sidebar/blob/master/LICENSE)
  */
- body {
+body {
   overflow-x: hidden;
 }
 
@@ -51,12 +51,8 @@ div.content {
   .sidebar a {
     float: left;
     margin-left: 10px;
-    margin-right: 30px;
   }
-  .back{
-    right: 0;
-    position: absolute;
-  }
+  
   .div.content {
     margin-left: auto;
     height: 80px;
@@ -95,8 +91,9 @@ div.content {
   }
   
   .form-signin .btn {
+    text-transform: unset !important;
     background-color: #013a81;
-    font-size: 80%;
+    font-size: 90%;
     border-radius: 5rem;
     letter-spacing: .1rem;
     font-weight: bold;
@@ -168,19 +165,6 @@ div.content {
     color: #777;
     margin-left: 10px;
   }
-  .form-list>select{
-    background: none repeat scroll 0 0 #FFFFFF;
-    border: 1px solid #E5E5E5;
-    border-radius: 5px 5px 5px 5px;
-    box-shadow: 0 0 5px #E8E8E8 inset;
-    height: 40px;
-    margin: 0 0 0 0px;
-    padding: 5px;
-    width: 190px;
-    margin-bottom: 15px;
-  }
-
-/*...........................................................
 /* The container */
 .container {
   display: block;
@@ -255,8 +239,19 @@ div.content {
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
-} 
-.back{
-  position: absolute; 
-  bottom: 0;
 }
+  
+  .form-list{
+    display: flex;
+    justify-content: center;
+  }
+  .form-list>select{
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #E5E5E5;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 0 0 5px #E8E8E8 inset;
+    height: 40px;
+    margin: 0 0 0 0px;
+    padding: 5px;
+    margin-bottom: 15px;
+  }
